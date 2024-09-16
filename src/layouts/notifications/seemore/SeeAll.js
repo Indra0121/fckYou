@@ -40,7 +40,7 @@ const LineItemCard = ({ ligne, theme }) => {
               <LocalOfferIcon color="primary" sx={{ mr: 1 }} />
               <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>Libeller : {ligne.libeller}</Typography>
               <Typography variant="h6" color="primary">
-                {(prix * ligne.quantiter)} €
+                {(ligne.prix * ligne.quantiter)} €
               </Typography>
             </Box>
             <Divider />
@@ -48,7 +48,7 @@ const LineItemCard = ({ ligne, theme }) => {
           <Grid item xs={6} sm={3}>
             <Box display="flex" alignItems="center">
               <EuroIcon color="secondary" sx={{ mr: 1, width: 20 }} />
-              <Typography variant="body2">Prix_HT: {prix} €/unité</Typography>
+              <Typography variant="body2">Prix_HT: {ligne.prix} €/unité</Typography>
             </Box>
           </Grid>
           <Grid item xs={6} sm={3}>
@@ -307,7 +307,7 @@ const SeeAllPage = () => {
           {({ blob, url, loading, error }) => (
             <Button
               variant="contained"
-              color="secondary"
+              color="white"
               startIcon={<PictureAsPdfIcon />}
               disabled={loading}
             >

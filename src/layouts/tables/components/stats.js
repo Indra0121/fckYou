@@ -176,7 +176,7 @@ function Sidebar({ rowData, open, onClose }) {
               navigate('/notifications', { state: { userInfos, userCommands, page } });
             }}
           >
-              see all</Button>
+              VOIR TOUT</Button>
           )}
         </Box>
         <IconButton

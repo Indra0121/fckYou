@@ -19,7 +19,7 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Button, Typography, Grid, Slide, Divider, Avatar, List, ListItem, ListItemIcon, ListItemText, Chip } from '@mui/material';
-// import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
@@ -372,7 +372,7 @@ function Sidebar({ rowData, open, onClose }) {
                     navigate('/notifications', { state: { userInfos, userCommands, page } });
                   }}
                 >
-                  Voir tout
+                VOIR TOUT
                 </Button>
               )}
             </Box>
@@ -395,7 +395,7 @@ function TablePaid() {
   const [selectedRowData, setSelectedRowData] = React.useState(null);
   const [clickedColumn, setClickedColumn] = React.useState(null);
 
-  const role = "manager";
+  const role = useSelector((state) => state.global.role);
   const navigate = useNavigate();
 
   React.useEffect(() => {

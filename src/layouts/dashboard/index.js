@@ -137,10 +137,11 @@ function Dashboard() {
         const response1 = await axios.get(`${baseUrl}/api/commandevalider.php`);
         const response2 = await axios.get(`${baseUrl}/api/commandeencours.php`);
         const response3 = await axios.get(`${baseUrl}/api/commandenretard.php`);
-        console.log(response.data)
+        console.log(response1)
         setData(response.data);
         setFilteredData(response.data.userDataf);
-        // setData1(response1.data.commandevalider.length);
+        setData4(response3.data.commandes);    
+        setData1(response1.data.commandevalider.length);
         // setData2(response2.data.commandeencours.length);
 
    const leng=response3.data.commandeenretard.length
@@ -150,7 +151,6 @@ function Dashboard() {
           console.log("data2 babyy",data3);
           
       
-        setData4(response3.data.commandes);    
         console.log("im here")
         console.log(response3)   
 
@@ -272,12 +272,6 @@ function Dashboard() {
             </Grid>
         </Grid>
         <MDBox>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={10} lg={12}>
-              <Projects />
-            </Grid>
-          </Grid>
-        </MDBox>
         <Grid container spacing={3} mt={3}>
           <Grid item xs={12} md={6} lg={6}>
 
@@ -315,6 +309,13 @@ function Dashboard() {
   )}
           </Grid>
         </Grid>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={10} lg={12}>
+              <Projects />
+            </Grid>
+          </Grid>
+        </MDBox>
+    
       </MDBox>
       
       <Slide direction="left" in={sidebarOpen} mountOnEnter unmountOnExit>

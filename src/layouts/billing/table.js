@@ -388,7 +388,7 @@ export default function TablePaid() {
                   <TableCell align="left">
                     <Button
                       variant="contained"
-                      color="primary"
+                      color="white"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleGeneratePDF(row);
